@@ -2,5 +2,5 @@
 using StudyingTesting.poker_hands;
 
 
-Console.WriteLine("????");
+Console.WriteLine("???????");
 MyTesting.RunMe();

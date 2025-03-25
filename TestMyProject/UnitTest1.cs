@@ -18,7 +18,7 @@ namespace TestMyProject
 
 
         [TestMethod]
-        public void TestMethod2()
+        public void TestHandSorting()
         {
 
             Card card = new Card(5, Suit.DIAMONDS);
@@ -43,10 +43,31 @@ namespace TestMyProject
             for (int i = 0; i < cards.Length; i++)
             {
                 Assert.IsTrue(num <= cards[i].Number, $"Expected {cards[i].Number} to be greater than {num}, but it was not. lingar");
-            
+
                 num = cards[i].Number;
             }
-            
+
+        }
+
+        [TestMethod]
+        public void TestStringToHand()
+        {
+            Card[] cards = new Card[5];
+            //8C TS KC 9H 4S
+            cards[0] = new Card(8, Suit.CLUBS);
+            cards[1] = new Card(10, Suit.SPADES);
+            //...
+            Hand h = new Hand("8C TS KC 9H 4S");
+
+            for (int i = 0; i < cards.Length; i++)
+            {
+                Assert.AreEqual(cards[i].Number, h.Cards[i].Number);
+
+                Assert.AreEqual(cards[i].Suit, h.Cards[i].Suit);
+
+            }
+
+
         }
     }
 
