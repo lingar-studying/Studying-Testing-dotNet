@@ -13,6 +13,11 @@ namespace StudyingTesting.poker_hands
         //Hand h = new Hand("8C TS KC 9H 4S"); 
         public Hand(String handString)
         {
+
+            for(int i = 0;i < cards.Length; i++)
+            {
+                cards[i] = new Card(1, Suit.CLUBS);
+            }
             //...TODO
         }
 

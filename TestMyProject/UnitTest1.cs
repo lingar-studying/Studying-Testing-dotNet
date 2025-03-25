@@ -56,6 +56,11 @@ namespace TestMyProject
             //8C TS KC 9H 4S
             cards[0] = new Card(8, Suit.CLUBS);
             cards[1] = new Card(10, Suit.SPADES);
+            cards[2] = new Card(13, Suit.CLUBS);
+            cards[3] = new Card(9, Suit.HEARTS);
+            cards[4] = new Card(4, Suit.SPADES);
+
+
             //...
             Hand h = new Hand("8C TS KC 9H 4S");
 
