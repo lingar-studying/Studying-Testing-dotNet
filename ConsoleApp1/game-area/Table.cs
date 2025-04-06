@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudyingTesting.users
+namespace StudyingTesting.poker_hands.game_area
 {
-    public enum User_Role
+    public class Table
     {
-        ADMIN, MANAGER, PLAYER
+
     }
+
 }
