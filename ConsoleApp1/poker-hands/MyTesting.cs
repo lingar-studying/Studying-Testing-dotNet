@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StudyingTesting.poker_hands
+﻿namespace StudyingTesting.poker_hands
 {
     public class MyTesting
     {
@@ -28,7 +22,7 @@ namespace StudyingTesting.poker_hands
             Hand hand = new Hand();
             hand.Cards = cards;
 
-            foreach(Card c in hand.Cards)
+            foreach (Card c in hand.Cards)
             {
                 Console.WriteLine(c);
             }

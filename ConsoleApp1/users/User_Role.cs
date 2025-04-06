@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StudyingTesting.users
+﻿namespace StudyingTesting.users
 {
     public enum User_Role
     {
