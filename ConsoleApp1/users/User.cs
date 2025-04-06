@@ -1,10 +1,4 @@
-﻿using StudyingTesting.game_area;
-using StudyingTesting.poker_hands.game_area;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StudyingTesting.poker_hands.game_area;
 
 namespace StudyingTesting.users
 {
