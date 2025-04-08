@@ -9,7 +9,7 @@ namespace StudyingTesting.users
 {
     public class User
     {
-        private string username;
+        private string username = "";
         private List<User_Role> roles = new List<User_Role>();
 
         private List<Table> tables = new List<Table>();
