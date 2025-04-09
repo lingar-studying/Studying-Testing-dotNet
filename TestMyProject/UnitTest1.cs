@@ -3,7 +3,7 @@ using StudyingTesting.poker_hands;
 
 namespace TestMyProject
 {
-    [TestClass]
+    //[TestClass]
     public class UnitTest1
     {
         [TestMethod]

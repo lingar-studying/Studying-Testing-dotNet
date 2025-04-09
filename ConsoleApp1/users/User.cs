@@ -20,7 +20,9 @@ namespace StudyingTesting.users
 
         public void AddTable()
         {
+            bool b = roles.Contains(User_Role.ADMIN) || roles.Contains(User_Role.MANAGER);
 
+            if (roles.Contains(User_Role.ADMIN) ||  roles.Contains(User_Role.MANAGER))
             tables.Add(new Table());
         }
     }
