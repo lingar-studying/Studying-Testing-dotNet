@@ -37,5 +37,31 @@ namespace StudyingTesting.poker_hands
             Array.Sort<Card>(cards);
         }
 
+        public WinningRank FindWinningRank()
+        {
+
+            Sort();
+
+            int count1 = 0;
+            for (int i = 1; i < cards.Length; i++)
+            {
+
+                if (cards[i].Suit==Cards[i - 1].Suit)
+                {
+                    count1++;
+                }
+
+
+
+            }
+
+            if(count1 > 1)
+            {
+                return WinningRank.PAIR;
+            }
+
+            return WinningRank.HIGH;
+        }
+
     }
 }
