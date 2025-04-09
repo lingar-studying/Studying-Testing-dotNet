@@ -39,29 +39,21 @@ namespace StudyingTesting.poker_hands
 
         public WinningRank FindWinningRank()
         {
+            Sort();  
 
-            Sort();
-
-            int count1 = 0;
+            // Check for pairs
             for (int i = 1; i < cards.Length; i++)
             {
-
-                if (cards[i].Suit==Cards[i - 1].Suit)
+                if (cards[i].Number == cards[i - 1].Number)
                 {
-                    count1++;
+                    return WinningRank.PAIR;  // Return PAIR if a pair is found
                 }
-
-
-
             }
 
-            if(count1 > 1)
-            {
-                return WinningRank.PAIR;
-            }
-
+            // If no pair is found, return HIGH
             return WinningRank.HIGH;
         }
+
 
     }
 }

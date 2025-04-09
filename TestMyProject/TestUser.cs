@@ -77,8 +77,9 @@ namespace TestMyProject
         [TestMethod]
         public void TestPair()
         {
+            // Creating a hand with a pair (2 of CLUBS and 2 of HEARTS)
             Card card1 = new Card(2, Suit.CLUBS);
-            Card card2 = new Card(2, Suit.HEARTS);
+            Card card2 = new Card(2, Suit.HEARTS);  // Pair
             Card card3 = new Card(7, Suit.SPADES);
             Card card4 = new Card(9, Suit.DIAMONDS);
             Card card5 = new Card(11, Suit.CLUBS);
@@ -88,8 +89,10 @@ namespace TestMyProject
 
             WinningRank rank = hand.FindWinningRank();
 
+            // The hand should return PAIR because of the pair of 2s
             Assert.AreEqual(WinningRank.PAIR, rank, "The hand should be identified as a Pair.");
         }
+
 
         [TestMethod]
         public void TestPairDoesNotBecomeHighCard()
