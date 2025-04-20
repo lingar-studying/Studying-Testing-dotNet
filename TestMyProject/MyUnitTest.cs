@@ -12,7 +12,7 @@ namespace TestMyProject
         {
             User user = new User();
             user.Roles.Add(User_Role.ADMIN);
-            // {}, 1, 2, 3, 1 2,1 3,2 3, 123
+            /// {}, 1, 2, 3, 1 2,1 3,2 3, 123
 
             user.AddTable();
             Assert.IsNotNull(user.Tables[0], "\nAdmin didn't add table!");
