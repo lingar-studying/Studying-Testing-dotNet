@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudyingTesting.poker_hands
 {
-    public class Hand 
+    public class Hand
     {
 
 
@@ -14,7 +14,7 @@ namespace StudyingTesting.poker_hands
         public Hand(String handString)
         {
 
-            for(int i = 0;i < cards.Length; i++)
+            for (int i = 0; i < cards.Length; i++)
             {
                 cards[i] = new Card(1, Suit.CLUBS);
             }
@@ -39,31 +39,39 @@ namespace StudyingTesting.poker_hands
 
         public WinningRank FindWinningRank()
         {
-
             Sort();
 
-            int count1 = 0;
-            for (int i = 1; i < cards.Length; i++)
+            List<int> numbers = new List<int>();
+            for (int i = 0; i < cards.Length; i++)
             {
+                numbers.Add(cards[i].Number);
+            }
 
-                if (cards[i].Suit==Cards[i - 1].Suit)
+            
+            int maxSame = 1;
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                int count = 1;
+                for (int j = i + 1; j < numbers.Count; j++)
                 {
-                    count1++;
+                    if (numbers[i] == numbers[j])
+                    {
+                        count++;
+                    }
                 }
 
-
-
+                if (count > maxSame)
+                {
+                    maxSame = count;
+                }
             }
 
-            if (count1 >=2)
-            {
-                return WinningRank.THREE_A_KIND;
-            }
-
-            if (count1 >= 3)
-            {
+            if (maxSame == 4)
                 return WinningRank.FOUR_A_KIND;
-            }
+
+            if (maxSame == 3)
+                return WinningRank.THREE_A_KIND;
 
             return WinningRank.HIGH;
         }

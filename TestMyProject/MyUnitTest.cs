@@ -5,7 +5,7 @@ using StudyingTesting.users;
 namespace TestMyProject
 {
     [TestClass]
-    public class TestUser
+    public class MyUnitTest
     {
         [TestMethod]
         public void TestAdminCanOpen()
@@ -18,6 +18,8 @@ namespace TestMyProject
             Assert.IsNotNull(user.Tables[0], "\nAdmin didn't add table!");
             //Assert.AreEqual(Expected, c.Number);
         }
+
+      
 
         [TestMethod]
         public void TestManagerCanOpen()
