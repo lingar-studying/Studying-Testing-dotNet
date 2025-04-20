@@ -55,9 +55,14 @@ namespace StudyingTesting.poker_hands
 
             }
 
-            if(count1 > 1)
+            if (count1 >=2)
             {
-                return WinningRank.PAIR;
+                return WinningRank.THREE_A_KIND;
+            }
+
+            if (count1 >= 3)
+            {
+                return WinningRank.FOUR_A_KIND;
             }
 
             return WinningRank.HIGH;
