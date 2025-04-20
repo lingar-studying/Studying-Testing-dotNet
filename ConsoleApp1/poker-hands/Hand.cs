@@ -9,7 +9,7 @@ namespace StudyingTesting.poker_hands
     public class Hand 
     {
 
-
+        
         //Hand h = new Hand("8C TS KC 9H 4S"); 
         public Hand(String handString)
         {
@@ -43,10 +43,11 @@ namespace StudyingTesting.poker_hands
             Sort();
 
             int count1 = 0;
+            
             for (int i = 1; i < cards.Length; i++)
             {
 
-                if (cards[i].Suit==Cards[i - 1].Suit)
+                if (cards[i].Number==Cards[i - 1].Number)
                 {
                     count1++;
                 }
@@ -54,10 +55,16 @@ namespace StudyingTesting.poker_hands
 
 
             }
+            
 
-            if(count1 > 1)
+            if(count1 > 0)
             {
                 return WinningRank.PAIR;
+            }
+
+            if (count1 > 1)
+            {
+                return WinningRank.FULL_HOUSE;
             }
 
             return WinningRank.HIGH;
