@@ -39,34 +39,41 @@ namespace StudyingTesting.poker_hands
 
         public WinningRank FindWinningRank()
         {
-
             Sort();
-
-            int count1 = 0;
             
-            for (int i = 1; i < cards.Length; i++)
+            int[] counts = new int[15];
+            
+            // Count occurrences
+            foreach (Card card in cards)
             {
+                counts[card.Number]++;
+            }
 
-                if (cards[i].Number==Cards[i - 1].Number)
-                {
-                    count1++;
-                }
-
-
-
+            // Look for four of a kind
+            foreach (int count in counts)
+            {
+                if (count == 4)
+                    return WinningRank.FOUR_A_KIND;
             }
             
-
-            if(count1 > 0)
+            // Look for three of a kind
+            foreach (int count in counts)
             {
-                return WinningRank.PAIR;
+                if (count == 3)
+                    return WinningRank.THREE_A_KIND;
             }
 
-            if (count1 > 1)
+            // Count pairs
+            int pairCount = 0;
+            foreach (int count in counts)
             {
-                return WinningRank.FULL_HOUSE;
+                if (count == 2)
+                    pairCount++;
             }
 
+            if (pairCount == 2) return WinningRank.PAIRS;
+            if (pairCount == 1) return WinningRank.PAIR;
+            
             return WinningRank.HIGH;
         }
 

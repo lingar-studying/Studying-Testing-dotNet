@@ -1,7 +1,6 @@
 using Newtonsoft.Json.Linq;
 using StudyingTesting.poker_hands;
 
-// Mark
 namespace TestMyProject
 {
     //[TestClass]
