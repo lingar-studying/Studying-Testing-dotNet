@@ -37,35 +37,53 @@ namespace StudyingTesting.poker_hands
             Array.Sort<Card>(cards);
         }
 
+
+
+        /// <summary>
+        /// Validate between straigh flush to straight not flush
+        /// https://projecteuler.net/problem=54
+        /// Straight Flush: All cards are consecutive values of same suit.
+        /// Straight: All cards are consecutive values.
+
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public WinningRank FindWinningRank()
         {
 
             Sort();
 
             int count1 = 0;
-            
+            bool isStraigh = true;
+            bool sameSuit = true;
             for (int i = 1; i < cards.Length; i++)
             {
 
-                if (cards[i].Number==Cards[i - 1].Number)
+                if (cards[i].Number- Cards[i - 1].Number !=1 )
                 {
-                    count1++;
+                    isStraigh = false;
+                    break;
+                    
                 }
+                if(sameSuit)
+                    sameSuit= cards[i].Suit.Equals(Cards[i-1].Suit);            
 
 
 
-            }
-            
+            }            
 
-            if(count1 > 0)
+            if(isStraigh )
             {
-                return WinningRank.PAIR;
+                return WinningRank.STRAIGHT;
             }
 
-            if (count1 > 1)
+            if (sameSuit && isStraigh )
             {
-                return WinningRank.FULL_HOUSE;
+
+                return WinningRank.STRAIGHT_FLUSH;
             }
+
+
 
             return WinningRank.HIGH;
         }

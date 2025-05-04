@@ -39,6 +39,14 @@ namespace StudyingTesting.poker_hands
                 Console.WriteLine(c);
             }
 
+            hand = new Hand("TS JC QD KD AD");//should be straight
+            WinningRank w =  hand.FindWinningRank();
+            Console.WriteLine("wining = " + w);
+
+            hand = new Hand("9D TD JD QD KD");//should be straight Flush
+            w = hand.FindWinningRank();
+            Console.WriteLine("wining = " + w);
+
         }
 
     }
